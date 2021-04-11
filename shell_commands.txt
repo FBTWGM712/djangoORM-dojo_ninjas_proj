@@ -1,0 +1,38 @@
+from apps.dojo_ninjas_app.models import *
+
+Dojo.objects.create(name = "CodingDojo O'higgins", city = "Chimbarongo", state = "Colchagua")
+Dojo.objects.create(name = "CodingDojo Biobio", city = "Hualqui", state = "Concepcion")
+Dojo.objects.create(name = "CodingDojo Araucania", city = "Loncoche", state = "Provincia de Cautin")
+
+dojo_delete_one = Dojo.objects.get(id = 1)
+dojo_delete_two = Dojo.objects.get(id = 2)
+dojo_delete_three = Dojo.objects.get(id = 3)
+
+dojo_delete_one.delete()
+dojo_delete_two.delete()
+dojo_delete_three.delete()
+
+Dojo.objects.create(name = "CodingDojo Los Rios", city = "Paillaco", state = "Valdivia")
+Dojo.objects.create(name = "CodingDojo Los Lagos", city = "Purranque", state = "Provincia de Osorno")
+Dojo.objects.create(name = "CodingDojo Antofagasta", city = "Tocopilla", state = "Provincia de Tocopilla")
+
+Ninja.objects.create(first_name = "Romulo", last_name = "Rulo", dojo = Dojo.objects.get(id=1))
+Ninja.objects.create(first_name = "Ramon", last_name = "Rodriguez", dojo = Dojo.objects.get(id=1))
+Ninja.objects.create(first_name = "Ricardo", last_name = "Rascahuel", dojo = Dojo.objects.get(id=1))
+
+Ninja.objects.create(first_name = "Eugenio", last_name = "Paleta", dojo = Dojo.objects.get(id=2))
+Ninja.objects.create(first_name = "Eusebio", last_name = "Lillo", dojo = Dojo.objects.get(id=2))
+Ninja.objects.create(first_name = "Emilio", last_name = "Escobar", dojo = Dojo.objects.get(id=2))
+
+Ninja.objects.create(first_name = "Gerardo", last_name = "Despisito", dojo = Dojo.objects.get(id=3))
+Ninja.objects.create(first_name = "Daniel", last_name = "Garfield", dojo = Dojo.objects.get(id=3))
+Ninja.objects.create(first_name = "Guillermo", last_name = "Despacito", dojo = Dojo.objects.get(id=3))
+
+Dojo.objects.first().ninjas.all()
+Dojo.objects.last().ninjas.all()
+Ninja.objects.last()
+
+
+
+
+
